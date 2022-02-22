@@ -7,6 +7,7 @@ import { CardList } from "../component/cardlist";
 export const Home = () => {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	const arrayPath = [people, planets, starships];
 
 	const randomPath = () => {
@@ -21,6 +22,9 @@ export const Home = () => {
 				console.log(result);
 			});
 	}, );
+=======
+	return 
+>>>>>>> origin/main
 =======
 	return 
 >>>>>>> origin/main
