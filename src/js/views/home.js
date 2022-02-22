@@ -1,14 +1,12 @@
 import React, { useEffect} from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
+import { Link } from "react-router-dom";
 import "../../styles/home.css";
-
+import { Card } from "../component/card";
+import { CardList } from "../component/cardlist";
 
 export const Home = () => {
-	const url = 'https://www.swapi.tech/api/';
-	const people = 'people/';
-	const planets = 'planets/';
-	const starships = 'starships/';
 
+<<<<<<< HEAD
 	const arrayPath = [people, planets, starships];
 
 	const randomPath = () => {
@@ -23,8 +21,10 @@ export const Home = () => {
 				console.log(result);
 			});
 	}, );
+=======
+	return 
+>>>>>>> origin/main
 
-	return <p>hola</p>
 
 };
 
