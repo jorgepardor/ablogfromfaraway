@@ -1,26 +1,13 @@
 import React, { useEffect} from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
+import { Link } from "react-router-dom";
 import "../../styles/home.css";
-
+import { Card } from "../component/card";
+import { CardList } from "../component/cardlist";
 
 export const Home = () => {
-	const url = 'https://www.swapi.tech/api/';
-	const people = 'people/';
-	const planets = 'planets/';
-	const starships = 'starships/';
 
-	const arrayPath = [people, planets, starships];
-	
-	useEffect(() => {
-		fetch(`${url}${arrayPath[index]}`)
-			.then((response) => response.json())
-			.then((result) => {
-				console.log("useEffect funcionando");
-				console.log(result);
-			});
-	}, );
+	return 
 
-	return <p>hola</p>
 
 };
 
