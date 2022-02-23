@@ -1,29 +1,21 @@
-import React, { useEffect} from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
+import React, { useEffect, useContext} from "react";
+import { Context } from "../store/appContext";
+import {Card} from "../component/card.js"
 import "../../styles/home.css";
 
 
 export const Home = () => {
-	const url = 'https://www.swapi.tech/api/';
-	const people = 'people/';
-	const planets = 'planets/';
-	const starships = 'starships/';
-
-	const arrayPath = [people, planets, starships];
-
-	
+	const { store, actions} = useContext(Context);
 	
 	useEffect(() => {
-		fetch(`${url}${arrayPath[0]}`)
-			.then((response) => response.json())
-			.then((result) => {
-				console.log("useEffect funcionando");
-				console.log(result);
-			});
-	}, );
-
-	return <p>hola</p>
-
-};
+		actions.getCharacters();
+	}, [])
 
 
+	return (
+		<div className="row row-cols-1 row-cols-md-5 g-4"> 
+			{store.chars.map((e, i) => {
+				return <Card key={i} character={e}/>
+			})}
+		</div>)
+}

@@ -9,6 +9,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 				fetch('https://www.swapi.tech/api/people')
 				.then((response) => response.json())
 				.then((data) => setStore({chars: data.results}));
+			},
+			getInfoCharacter: async (id) => {
+				let response = await fetch('https://www.swapi.tech/api/people/'+ id)
+				let data = await response.json();
+				return data.result.properties;
 			}
 		}
 	};
