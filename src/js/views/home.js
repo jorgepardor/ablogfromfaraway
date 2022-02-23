@@ -5,7 +5,7 @@ import "../../styles/home.css";
 
 
 export const Home = () => {
-	const { store, actions} = useContext(Context);
+	const {store, actions} = useContext(Context);
 	
 	useEffect(() => {
 		actions.getCharacters();
