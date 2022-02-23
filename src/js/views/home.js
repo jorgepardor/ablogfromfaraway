@@ -13,9 +13,11 @@ export const Home = () => {
 
 
 	return (
-		<div className="row row-cols-1 row-cols-md-5 g-4"> 
-			{store.chars.map((e, i) => {
-				return <Card key={i} character={e}/>
-			})}
+		<div className="container">
+			<div className="row row-cols-1 row-cols-md-4 g-4"> 
+				{store.chars.map((e, i) => {
+					return <Card key={i} character={e}/>
+				})}
+			</div>
 		</div>)
 }
