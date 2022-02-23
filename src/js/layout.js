@@ -9,8 +9,6 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-import { InnerNav } from "./component/innernav";
-import { CardList } from "./component/cardlist";
 
 //create your first component
 const Layout = () => {
@@ -21,34 +19,24 @@ const Layout = () => {
 	return (
 		<div>
 			<BrowserRouter basename={basename}>
-
 				<ScrollToTop>
-					
 					<Navbar />
-
-					<InnerNav />
-
 					<Switch>
-						<Route exact path="characters">
-							<CardList />
+						<Route exact path="/">
+							<Home />
 						</Route>
-
-						<Route exact path="planets">
-							<CardList />
+						{/* <Route exact path="/demo">
+							<Demo />
 						</Route>
-
-						<Route exact path="starships">
-							<CardList />
+						<Route exact path="/single/:theid">
+							<Single />
 						</Route>
-
+						<Route>
+							<h1>Not found!</h1>
+						</Route> */}
 					</Switch>
-
-					<CardList />
-
 					<Footer />
-
 				</ScrollToTop>
-
 			</BrowserRouter>
 		</div>
 	);
