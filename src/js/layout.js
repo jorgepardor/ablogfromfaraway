@@ -5,6 +5,7 @@ import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
+import { InnerNav } from "./component/innernav";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -21,6 +22,7 @@ const Layout = () => {
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
 					<Navbar />
+					<InnerNav />
 					<Switch>
 						<Route exact path="/">
 							<Home />
