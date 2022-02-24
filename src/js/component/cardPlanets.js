@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import PropTypes from 'prop-types';
 
 export const CardPlanets = ({planet}) => {
-    const { store, actions} = useContext(Context);
+    const {store, actions} = useContext(Context);
     const [info, setInfo] = useState({});
 
 
@@ -18,12 +18,12 @@ export const CardPlanets = ({planet}) => {
 
     return (
 
-        <div className="card">
+        <div className="card bg-dark">
             <img src="..." className="card-img-top" alt="..." />
-            <div className="card-body">
-                <h5 className="card-title">{planet.name}</h5>
-                <p className="card-text">Population: {info.population}</p>
-                <a href="#" className="btn btn-primary">Go somewhere</a>
+            <div className="card-body text-center">
+                <h5 className="card-title lead text-light">{planet.name}</h5>
+                <p className="card-text text-light">Population: {info.population}</p>
+                <Link to={`/info/${planet.uid}`}>Get more info</Link>
             </div>
         </div>
     )

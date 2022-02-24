@@ -12,6 +12,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.then((data) => setStore({chars: data.results}));
 			},
 
+			getCharactersPics: () => {
+				fetch('https://starwars-visualguide.com/assets/img/characters/')
+				.then((response) => response.json())
+				.then((data) => console.log(data));
+			},
+
 			getPlanets: () => {
 				fetch('https://www.swapi.tech/api/planets?page=1&limit=5')
 				.then((response) => response.json())

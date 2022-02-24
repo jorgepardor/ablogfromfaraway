@@ -1,7 +1,6 @@
 import React, { useEffect, useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import PropTypes from 'prop-types';
-import {Button} from 'react-bootstrap';
 import { Link } from "react-router-dom";
 
 export const Card = ({character}) => {

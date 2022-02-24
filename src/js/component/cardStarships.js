@@ -19,7 +19,7 @@ export const CardStarships = ({starship}) => {
 
     return (
 
-        <div className="card">
+        <div className="card bg-dark">
             <img src="..." className="card-img-top" alt="..." />
             <div className="card-body">
                 <h5 className="card-title">{starship.name}</h5>
