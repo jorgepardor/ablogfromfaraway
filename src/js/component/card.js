@@ -24,7 +24,7 @@ export const Card = ({character}) => {
             <img src="..." className="card-img-top" alt="..." />
             <div className="card-body text-center">
                 <h5 className="card-title lead text-light">{character.name}</h5>
-                <Link to={`/info/${character.uid}`}>{character.name}</Link>
+                <Link to={`/info/${character.uid}`}>Get more info</Link>
             </div>
         </div>
     )
