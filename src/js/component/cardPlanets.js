@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { Link, useParams } from "react-router-dom";
 
 export const CardPlanets = ({planet}) => {
-    const { store, actions} = useContext(Context);
+    const {store, actions} = useContext(Context);
     const [info, setInfo] = useState({});
 
 
@@ -29,7 +29,7 @@ export const CardPlanets = ({planet}) => {
                     <span className="btn btn-primary btn-lg" href="#" role="button">
                         More info
                     </span>
-			    </Link>
+			          </Link>
             </div>
         </div>
     )

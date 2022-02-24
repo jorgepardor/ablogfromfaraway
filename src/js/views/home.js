@@ -11,13 +11,14 @@ export const Home = () => {
 	
 	useEffect(() => {
 		actions.getCharacters();
+		actions.getCharactersPics();
 		actions.getPlanets();
 		actions.getStarships();
 	}, [])
 
 
 	return (
-		<div>
+		<div className="container">
 			<div className="row row-cols-1 row-cols-md-5 g-4"> 
 			{store.chars.map((e, i) => {
 				return <Card key={i} character={e}/>
