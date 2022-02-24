@@ -15,7 +15,7 @@ export const Card = ({character}) => {
     const getInfo = async () => {
         let data = await actions.getInfoCharacter(character.uid);
         setInfo(data);
-        console.log(data);
+        // console.log(data);
     }
 
     return (
@@ -24,7 +24,11 @@ export const Card = ({character}) => {
             <img src="..." className="card-img-top" alt="..." />
             <div className="card-body text-center">
                 <h5 className="card-title lead text-light">{character.name}</h5>
-                <Link to={`/info/${character.uid}`}>{character.name}</Link>
+                <Link to={`/character/${character.uid}`}>
+                <span className="btn btn-primary btn-lg" href="#" role="button">
+					More info
+				</span>
+                </Link>
             </div>
         </div>
     )
