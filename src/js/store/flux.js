@@ -11,6 +11,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.then((response) => response.json())
 				.then((data) => setStore({chars: data.results}));
 			},
+
 			getPlanets: () => {
 				fetch('https://www.swapi.tech/api/planets?page=1&limit=5')
 				.then((response) => response.json())
@@ -35,6 +36,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				let response = await fetch('https://www.swapi.tech/api/starships/'+ id)
 				let data = await response.json();
 				return data.result.properties;
+
 			}
 		}
 	};
