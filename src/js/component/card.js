@@ -7,7 +7,8 @@ import { PostModal } from "./modal";
 export const Card = ({character}) => {
     const { store, actions} = useContext(Context);
     const [info, setInfo] = useState({});
-    const [modalShow, setModalShow] = React.useState(false);
+
+    const [description, setDescription] = useState('');
     useEffect(() => {
         getInfo();
     }, [])
