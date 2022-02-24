@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 export const Card = ({character}) => {
     const { store, actions} = useContext(Context);
     const [info, setInfo] = useState({});
+   const [description, setDescription] = useState('');
+
     useEffect(() => {
         getInfo();
     }, [])
