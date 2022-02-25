@@ -20,11 +20,11 @@ export const Card = ({character}) => {
 
     return (
 
-        <div className="card bg-dark mb-5 border-0">
+        <div className="card mb-5 p-3 border-0">
             <img src="https://picsum.photos/300/300" className="card-img-top rounded-circle" alt="..." />
             <div className="card-body text-center">
                 <h4 className="card-title">{character.name}</h4>
-                <p className="card-text lead">Birth year: <span className="card-description">{character.birth_year}</span></p>
+                {/* <p className="card-text lead descrHead">Birth year: <span className="card-description descContent">{infoCharacter.birth_year}</span></p> */}
                 <Link to={`/character/${character.uid}`}>
                     <span className="btn btn-outline-info" href="#" role="button">
                         More info

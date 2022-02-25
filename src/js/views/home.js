@@ -11,7 +11,6 @@ export const Home = () => {
 	
 	useEffect(() => {
 		actions.getCharacters();
-		actions.getCharactersPics();
 		actions.getPlanets();
 		actions.getStarships();
 	}, [])
@@ -19,19 +18,19 @@ export const Home = () => {
 
 	return (
 		<div className="container">
-			<p className="display-3 text-info text-center">Characters</p> 
-			<div className="row row-cols-1 row-cols-md-5 g-4">
+			<p className="display-3 text-info text-center mb-4">Characters</p> 
+			<div className="row row-cols-2 row-cols-md-5 g-4">
 			{store.chars.map((e, i) => {
 				return <Card key={i} character={e}/>
 			})}
 		</div>
-		<p className="display-3 text-info text-center">Planets</p> 
+		<p className="display-3 text-info text-center mb-4">Planets</p> 
 		<div className="row row-cols-1 row-cols-md-5 g-4"> 
 			{store.planets.map((e, i) => {
 				return <CardPlanets key={i} planet={e}/>
 			})}
 		</div>
-		<p className="display-3 text-info text-center">Starships</p> 
+		<p className="display-3 text-info text-center mb-4">Starships</p> 
 		<div className="row row-cols-1 row-cols-md-5 g-4"> 
 			{store.starships.map((e, i) => {
 				return <CardStarships key={i} starship={e}/>
