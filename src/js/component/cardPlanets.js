@@ -15,21 +15,20 @@ export const CardPlanets = ({planet}) => {
     const getInfo = async () => {
         let data = await actions.getInfoPlanet(planet.uid);
         setInfo(data);
-        // console.log(data);
     }
 
     return (
 
-        <div className="card bg-dark">
-            <img src="..." className="card-img-top" alt="..." />
+        <div className="card bg-dark mb-5 border-0">
+            <img src="https://picsum.photos/300/300" className="card-img-top rounded-circle" alt="..." />
             <div className="card-body text-center">
-                <h5 className="card-title lead text-light">{planet.name}</h5>
-                <p className="card-text">Population: {info.population}</p>
+                <h4 className="card-title">{planet.name}</h4>
+                <p className="card-text">Population: <span className="card-description">{info.population}</span></p>
                 <Link to={`/planet/${planet.uid}`}>
-                    <span className="btn btn-primary btn-lg" href="#" role="button">
+                    <span className="btn btn-outline-info" href="#" role="button">
                         More info
                     </span>
-			          </Link>
+			    </Link>
             </div>
         </div>
     )
