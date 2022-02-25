@@ -21,7 +21,7 @@ export const CardStarships = ({starship}) => {
 
     return (
 
-        <div className="card bg-dark mb-5 border-0">
+        <div className="card mb-5 p-3 border-0">
             <img src="https://picsum.photos/300/300" className="card-img-top rounded-circle" alt="..." />
             <div className="card-body text-center">
                 <h4 className="card-title">{starship.name}</h4>

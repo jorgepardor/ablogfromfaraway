@@ -6,10 +6,10 @@ body {
     background-attachment: fixed;
 };
 
-.card-title  {
+.descrHead  {
     color: #BFBFBF !important;
 };
 
-.card-description {
+.descContent {
     color: #737373 !important;
 };
