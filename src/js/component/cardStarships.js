@@ -2,10 +2,11 @@
 import React, { useEffect, useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import PropTypes from 'prop-types';
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 export const CardStarships = ({starship}) => {
-    const { store, actions} = useContext(Context);
+    const {store, actions} = useContext(Context);
     const [info, setInfo] = useState({});
 
 
@@ -15,18 +16,18 @@ export const CardStarships = ({starship}) => {
     const getInfo = async () => {
         let data = await actions.getInfoStarship(starship.uid);
         setInfo(data);
-        // console.log(data);
+        console.log(data);
     }
 
     return (
 
-        <div className="card bg-dark">
-            <img src="..." className="card-img-top" alt="..." />
+        <div className="card bg-dark mb-5 border-0">
+            <img src="https://picsum.photos/300/300" className="card-img-top rounded-circle" alt="..." />
             <div className="card-body text-center">
-                <h5 className="card-title lead text-light">{starship.name}</h5>
-                <p className="card-text">Manufacturer: {info.manufacturer}</p>
-                <Link to={`/starship/${starship.uid}`}>
-                    <span className="btn btn-primary btn-lg" href="#" role="button">
+                <h4 className="card-title">{starship.name}</h4>
+                <p className="card-title lead">Manufacturer:  <span className="card-description">{info.manufacturer}</span></p>
+                <Link to={`/starships/${starship.uid}`}>
+                    <span className="btn btn-outline-info" href="#" role="button">
                         More info
                     </span>
 			    </Link>

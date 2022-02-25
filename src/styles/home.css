@@ -1,0 +1,15 @@
+body {
+    background-image: url(/src/img/background.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+    background-attachment: fixed;
+};
+
+.card-title  {
+    color: #BFBFBF !important;
+};
+
+.card-description {
+    color: #737373 !important;
+};

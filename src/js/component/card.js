@@ -20,14 +20,15 @@ export const Card = ({character}) => {
 
     return (
 
-        <div className="card bg-dark">
-            <img src="..." className="card-img-top" alt="..." />
+        <div className="card bg-dark mb-5 border-0">
+            <img src="https://picsum.photos/300/300" className="card-img-top rounded-circle" alt="..." />
             <div className="card-body text-center">
-                <h5 className="card-title lead text-light">{character.name}</h5>
+                <h4 className="card-title">{character.name}</h4>
+                <p className="card-text lead">Birth year: <span className="card-description">{character.birth_year}</span></p>
                 <Link to={`/character/${character.uid}`}>
-                <span className="btn btn-primary btn-lg" href="#" role="button">
-					More info
-				</span>
+                    <span className="btn btn-outline-info" href="#" role="button">
+                        More info
+                    </span>
                 </Link>
             </div>
         </div>
