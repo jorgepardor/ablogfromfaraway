@@ -2,5 +2,18 @@
     General Styles
 */
 body {
-background-color: #272727;
+    background-image: url(/src/img/background.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+    background-attachment: fixed;
+    background-color: #262626;
+};
+
+.descrHead {
+    color: #404040 !important; 
+};
+
+.descContent {
+    color: #737373 !important;
 };
