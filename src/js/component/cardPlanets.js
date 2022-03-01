@@ -29,6 +29,7 @@ export const CardPlanets = ({planet}) => {
                         More info
                     </span>
 			    </Link>
+                {/* <button className="btn btn-primary" onClick={}>Add to favs</button> */}
             </div>
         </div>
     )

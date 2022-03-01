@@ -21,7 +21,7 @@ export const Card = ({character}) => {
     return (
 
         <div className="card mb-5 p-3 border-0">
-            <img src="https://picsum.photos/300/300" className="card-img-top rounded-circle" alt="..." />
+            <img src={"https://starwars-visualguide.com/assets/img/characters/"+character.uid+".jpg"} className="card-img-top rounded-circle" alt="..." />
             <div className="card-body text-center">
                 <h4 className="card-title">{character.name}</h4>
                 {/* <p className="card-text lead descrHead">Birth year: <span className="card-description descContent">{infoCharacter.birth_year}</span></p> */}
@@ -30,6 +30,7 @@ export const Card = ({character}) => {
                         More info
                     </span>
                 </Link>
+                <button className="btn btn-primary" onClick={() => {actions.setFavourites({type:"character", id: character.uid, name: character.name})}}>Add to favs</button>
             </div>
         </div>
     )

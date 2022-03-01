@@ -31,6 +31,7 @@ export const CardStarships = ({starship}) => {
                         More info
                     </span>
 			    </Link>
+                {/* <button className="btn btn-primary" onClick={}>Add to favs</button> */}
             </div>
         </div>
     )
