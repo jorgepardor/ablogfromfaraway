@@ -52,8 +52,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({favourites: [...getStore().favourites, fav]}) 
 			},
 
-			deleteFavourites: (type, id) => {
-				setStore({favourites: [...getStore().favourites.filter((fav) => fav.id != id && fav.type == type)]})
+			deleteFavourites: (index) => {
+				setStore({favourites: [...getStore().favourites.filter((fav, i) => index != i)]})
 				
 			},
 

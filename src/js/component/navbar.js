@@ -16,8 +16,8 @@ export const Navbar = () => {
 				Favourites 💖
 				</button>
 				<ul className="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="dropdownMenuButton2">
-					{store.favourites.map((favourite) => {
-						return <li key={favourite.id}>{favourite.name} <button className="btn btn-warning" onClick={() => {actions.deleteFavourites(favourite.type,favourite.id)}}>❌</button></li>
+					{store.favourites.map((favourite, index) => {
+						return <li key={favourite.id}>{favourite.name} <button className="btn btn-warning" onClick={() => {actions.deleteFavourites(index)}}>❌</button></li>
 					})}
 				</ul>
 			</div>

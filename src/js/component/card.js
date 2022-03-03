@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export const Card = ({character}) => {
     const { store, actions} = useContext(Context);
     const [info, setInfo] = useState({});
-   const [description, setDescription] = useState('');
+    const [description, setDescription] = useState('');
 
     useEffect(() => {
         getInfo();
@@ -15,7 +15,6 @@ export const Card = ({character}) => {
     const getInfo = async () => {
         let data = await actions.getInfoCharacter(character.uid);
         setInfo(data);
-        // console.log(data);
     }
 
     return (
@@ -30,7 +29,7 @@ export const Card = ({character}) => {
                         More info
                     </span>
                 </Link>
-                <button className="btn btn-primary" onClick={() => {actions.setFavourites({type:"character", id: character.uid, name: character.name})}}>Add to favs</button>
+                <button className="btn btn-primary" onClick={() => {actions.setFavourites({type:"character", id: character.uid, name: character.name})}}>💖</button>
             </div>
         </div>
     )

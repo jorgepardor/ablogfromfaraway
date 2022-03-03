@@ -6,6 +6,7 @@ import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import CharacterInfo from "./views/characterinfo.js";
 import injectContext from "./store/appContext";
+import background from "../img/background.png"
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
@@ -18,7 +19,7 @@ const Layout = () => {
 
 	return (
 
-		<div>
+		<div style={{backgroundImage:`url(${background})`}}>
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
 					<Navbar />
