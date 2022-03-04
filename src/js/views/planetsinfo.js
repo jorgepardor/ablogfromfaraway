@@ -5,7 +5,7 @@ import "../../styles/home.css";
 
 const Planets = () => {
     const {store, actions} = useContext(Context);
-    const [infoPlanet, getInfoPlanet] = useState({});
+    const [infoPlanet, setInfoPlanet] = useState({});
     const params = useParams();
 
 
@@ -20,15 +20,14 @@ const Planets = () => {
       
         <div className="card-body text-center">
           {/* <img src={"https://starwars-visualguide.com/assets/img/planets/"+planet.uid+".jpg"} className="card-img-top rounded-circle" alt="..." /> */}
-          <p className="card-text display-6 text-info">{infoCharacter.name}</p>  
-          <p className="card-text lead descrHead"> Height: <span className="card-description descContent"> {infoCharacter.height}</span> </p>
-          <p className="card-text lead descrHead"> Weight:  <span className="card-description descContent"> {infoCharacter.mass}</span></p>
-          <p className="card-text lead descrHead">Hair color: <span className="card-description descContent"> {infoCharacter.hair_color}</span></p>
-          <p className="card-text lead descrHead">Hair color: <span className="card-description descContent"> {infoCharacter.hair_color}</span></p>
-          <p className="card-text lead descrHead">Skin color:<span className="card-description descContent"> {infoCharacter.skin_color}</span> </p>
-          <p className="card-text lead descrHead">Eye color:<span className="card-description descContent"> {infoCharacter.eye_color}</span></p>
-          <p className="card-text lead descrHead">Birth year:<span className="card-description descContent"> {infoCharacter.birth_year}</span> </p>
-          <p className="card-text lead descrHead">Gender:<span className="card-description descContent"> {infoCharacter.gender}</span> </p>
+          <p className="card-text display-6 text-info">{infoPlanet.name}</p>  
+          <p className="card-text lead descrHead">Climate: <span className="card-description descContent"> {infoPlanet.climate}</span> </p>
+          <p className="card-text lead descrHead">Terrain:  <span className="card-description descContent"> {infoPlanet.terrain}</span></p>
+          <p className="card-text lead descrHead">Population: <span className="card-description descContent"> {infoPlanet.population}</span></p>
+          <p className="card-text lead descrHead">Gravity: <span className="card-description descContent"> {infoPlanet.gravity}</span></p>
+          <p className="card-text lead descrHead">Rotation period:<span className="card-description descContent"> {infoPlanet.rotation_period}</span> </p>
+          <p className="card-text lead descrHead">Orbital period:<span className="card-description descContent"> {infoPlanet.orbital_period}</span></p>
+          <p className="card-text lead descrHead">Surface water:<span className="card-description descContent"> {infoPlanet.surface_water}</span> </p>
 
 
         </div>
