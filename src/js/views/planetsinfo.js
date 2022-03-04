@@ -3,23 +3,23 @@ import { Context } from "../store/appContext";
 import { useParams } from "react-router-dom";
 import "../../styles/home.css";
 
-const CharacterInfo = () => {
+const Planets = () => {
     const {store, actions} = useContext(Context);
-    const [infoCharacter, setInfoCharacter] = useState({});
+    const [infoPlanet, getInfoPlanet] = useState({});
     const params = useParams();
 
 
     // console.log();
 
     useEffect(async () => {
-      const data = await actions.getInfoCharacter(params.theid);
-      setInfoCharacter(data);
+      const data = await actions.getInfoPlanet(params.theid);
+      setInfoPlanet(data);
     }, []);
     
     return (
       
         <div className="card-body text-center">
-          {/* <img src={"https://starwars-visualguide.com/assets/img/characters/"+character.uid+".jpg"} className="card-img-top rounded-circle" alt="..." /> */}
+          {/* <img src={"https://starwars-visualguide.com/assets/img/planets/"+planet.uid+".jpg"} className="card-img-top rounded-circle" alt="..." /> */}
           <p className="card-text display-6 text-info">{infoCharacter.name}</p>  
           <p className="card-text lead descrHead"> Height: <span className="card-description descContent"> {infoCharacter.height}</span> </p>
           <p className="card-text lead descrHead"> Weight:  <span className="card-description descContent"> {infoCharacter.mass}</span></p>

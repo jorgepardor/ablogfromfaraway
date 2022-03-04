@@ -7,7 +7,7 @@ import { Link, useParams } from "react-router-dom";
 export const CardPlanets = ({planet}) => {
     const {store, actions} = useContext(Context);
     const [info, setInfo] = useState({});
-
+    const [description, setDescription] = useState('');
 
     useEffect(() => {
         getInfo();
@@ -20,7 +20,7 @@ export const CardPlanets = ({planet}) => {
     return (
 
         <div className="card mb-5 p-3 border-0">
-            <img src="https://picsum.photos/300/300" className="card-img-top rounded-circle" alt="..." />
+            <img src={"https://starwars-visualguide.com/assets/img/planets/"+planet.uid+".jpg"} className="card-img-top rounded-circle" alt="..." />
             <div className="card-body text-center">
                 <h4 className="card-title">{planet.name}</h4>
                 <p className="card-text">Population: <span className="card-description">{info.population}</span></p>
@@ -29,7 +29,7 @@ export const CardPlanets = ({planet}) => {
                         More info
                     </span>
 			    </Link>
-                {/* <button className="btn btn-primary" onClick={}>Add to favs</button> */}
+                <button className="btn btn-primary" onClick={() => {actions.setFavourites({type:"planet", id: planet.uid, name: planet.name})}}>💖</button>
             </div>
         </div>
     )
