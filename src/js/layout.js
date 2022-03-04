@@ -1,13 +1,11 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
-
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import CharacterInfo from "./views/characterinfo.js";
 import injectContext from "./store/appContext";
 import background from "../img/background.png"
-
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
@@ -19,7 +17,7 @@ const Layout = () => {
 
 	return (
 
-		<div style={{backgroundImage:`url(${background})`}}>
+		<div style={{backgroundImage:`url(${background})`, backgroundPosition: 'center', backgroundAttachment: 'fixed', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', height:"100%"}}>
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
 					<Navbar />

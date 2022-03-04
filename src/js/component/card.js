@@ -19,17 +19,16 @@ export const Card = ({character}) => {
 
     return (
 
-        <div className="card mb-5 p-3 border-0">
-            <img src={"https://starwars-visualguide.com/assets/img/characters/"+character.uid+".jpg"} className="card-img-top rounded-circle" alt="..." />
+        <div className="card mb-5 p-3 border-0 bg-dark">
+            <img src={"https://starwars-visualguide.com/assets/img/characters/"+character.uid+".jpg"} className="card-img-top" alt="..." />
             <div className="card-body text-center">
-                <h4 className="card-title">{character.name}</h4>
-                {/* <p className="card-text lead descrHead">Birth year: <span className="card-description descContent">{infoCharacter.birth_year}</span></p> */}
+                <h5 className="card-title text-light">{character.name}</h5>
                 <Link to={`/character/${character.uid}`}>
-                    <span className="btn btn-outline-info" href="#" role="button">
+                    <span className="btn btn-outline-info mx-1 mt-2" href="#" role="button">
                         More info
                     </span>
                 </Link>
-                <button className="btn btn-primary" onClick={() => {actions.setFavourites({type:"character", id: character.uid, name: character.name})}}>💖</button>
+                <button className="btn btn-outline-info mx-1 mt-2" onClick={() => {actions.setFavourites({type:"character", id: character.uid, name: character.name})}}>💖</button>
             </div>
         </div>
     )

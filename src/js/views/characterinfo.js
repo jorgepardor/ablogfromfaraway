@@ -4,38 +4,90 @@ import { useParams } from "react-router-dom";
 import "../../styles/home.css";
 
 const CharacterInfo = () => {
-    const {store, actions} = useContext(Context);
-    const [infoCharacter, setInfoCharacter] = useState({});
-    const params = useParams();
+  const { store, actions } = useContext(Context);
+  const [infoCharacter, setInfoCharacter] = useState({});
+  const params = useParams();
 
+  // console.log();
 
-    // console.log();
+  useEffect(async () => {
+    const data = await actions.getInfoCharacter(params.theid);
+    setInfoCharacter(data);
+  }, []);
 
-    useEffect(async () => {
-      const data = await actions.getInfoCharacter(params.theid);
-      setInfoCharacter(data);
-    }, []);
-    
-    return (
-      
-        <div className="card-body text-center">
-          {/* <img src={"https://starwars-visualguide.com/assets/img/characters/"+character.uid+".jpg"} className="card-img-top rounded-circle" alt="..." /> */}
-          <p className="card-text display-6 text-info">{infoCharacter.name}</p>  
-          <p className="card-text lead descrHead"> Height: <span className="card-description descContent"> {infoCharacter.height}</span> </p>
-          <p className="card-text lead descrHead"> Weight:  <span className="card-description descContent"> {infoCharacter.mass}</span></p>
-          <p className="card-text lead descrHead">Hair color: <span className="card-description descContent"> {infoCharacter.hair_color}</span></p>
-          <p className="card-text lead descrHead">Hair color: <span className="card-description descContent"> {infoCharacter.hair_color}</span></p>
-          <p className="card-text lead descrHead">Skin color:<span className="card-description descContent"> {infoCharacter.skin_color}</span> </p>
-          <p className="card-text lead descrHead">Eye color:<span className="card-description descContent"> {infoCharacter.eye_color}</span></p>
-          <p className="card-text lead descrHead">Birth year:<span className="card-description descContent"> {infoCharacter.birth_year}</span> </p>
-          <p className="card-text lead descrHead">Gender:<span className="card-description descContent"> {infoCharacter.gender}</span> </p>
-
-
+  return (
+    <div className="container">
+      <div className="row d-flex justify-content-center">
+        <div className="col-6">
+          <div className="card-body text-center bg-dark rounded-2">
+            <img
+              src={
+                "https://starwars-visualguide.com/assets/img/characters/" +
+                params.theid +
+                ".jpg"
+              }
+              className="card-img-top img-fluid rounded-2 my-5" style={{height:"70%", width:"70%"}}
+              alt="..."
+            />
+            <p className="card-text display-5 text-light mt-2">
+              {infoCharacter.name}
+            </p>
+            <p className="card-text lead descrHead mt-3 text-light">
+              {" "}
+              Height:{" "}
+              <span className="text-info">
+                {" "}
+                {infoCharacter.height}{" cms."}
+              </span>{" "}
+            </p>
+            <p className="card-text lead descrHead text-light">
+              {" "}
+              Weight:{" "}
+              <span className="text-info">
+                {" "}
+                {infoCharacter.mass}{" kg."}
+              </span>
+            </p>
+            <p className="card-text lead descrHead text-light">
+              Hair color:{" "}
+              <span className="text-info">
+                {" "}
+                {infoCharacter.hair_color}
+              </span>
+            </p>
+            <p className="card-text lead descrHead text-light">
+              Skin color:
+              <span className="text-info">
+                {" "}
+                {infoCharacter.skin_color}
+              </span>{" "}
+            </p>
+            <p className="card-text lead descrHead text-light">
+              Eye color:
+              <span className="text-info">
+                {" "}
+                {infoCharacter.eye_color}
+              </span>
+            </p>
+            <p className="card-text lead descrHead text-light">
+              Birth year:
+              <span className="text-info">
+                {" "}
+                {infoCharacter.birth_year}
+              </span>{" "}
+            </p>
+            <p className="card-text lead descrHead text-light mb-4">
+              Gender:
+              <span className="text-info">
+                {" "}
+                {infoCharacter.gender}
+              </span>{" "}
+            </p>
+          </div>
         </div>
-    );
-
-
+      </div>
+    </div>
+  );
 };
-
 
 export default CharacterInfo;
