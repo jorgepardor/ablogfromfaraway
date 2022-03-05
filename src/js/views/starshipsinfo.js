@@ -19,7 +19,7 @@ const Planets = () => {
     return (
       
         <div className="card-body text-center">
-          {/* <img src={"https://starwars-visualguide.com/assets/img/planets/"+planet.uid+".jpg"} className="card-img-top rounded-circle" alt="..." /> */}
+          <img src={"https://starwars-visualguide.com/assets/img/planets/"+params.theid+".jpg"} className="card-img-top rounded-circle" alt="..." />
           <p className="card-text display-6 text-info">{infoStarship.name}</p>  
           <p className="card-text lead descrHead">Speed: <span className="card-description descContent"> {infoStarship.max_atmosphering_speed} km/h atmosphering</span> </p>
           <p className="card-text lead descrHead">Price: <span className="card-description descContent"> {infoStarship.cost_in_credits} credits</span> </p>
