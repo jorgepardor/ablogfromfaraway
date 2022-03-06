@@ -14,6 +14,11 @@ body {
     color: #404040 !important; 
 };
 
+.dropdown-menu {
+    width: 500px !important;
+    /* height: 400px !important; */
+} 
+
 .descContent {
     color: #737373 !important;
 };

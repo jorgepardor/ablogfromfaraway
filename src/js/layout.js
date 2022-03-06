@@ -17,7 +17,7 @@ const Layout = () => {
 
 	return (
 
-		<div style={{backgroundImage:`url(${background})`, backgroundPosition: 'center', backgroundAttachment: 'fixed', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', height:"100%"}}>
+		<div style={{backgroundImage:`url(${background})`, backgroundPosition: 'center', backgroundAttachment: 'fixed', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', height:"vh100"}}>
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
 					<Navbar />

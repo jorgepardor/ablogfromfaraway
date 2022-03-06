@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { useParams } from "react-router-dom";
 import "../../styles/home.css";
 
-const Planets = () => {
+const PlanetsInfo = () => {
   const { store, actions } = useContext(Context);
   const [infoPlanet, setInfoPlanet] = useState({});
   const params = useParams();
@@ -77,8 +77,11 @@ const Planets = () => {
               <span className="card-description descContent">
                 {" "}
                 {infoPlanet.surface_water}
-              </span>{" "}
+              </span>
             </p>
+            <button type="button" class="btn btn-info mt-3">
+              Back
+            </button>
           </div>
         </div>
       </div>
@@ -86,4 +89,4 @@ const Planets = () => {
   );
 };
 
-export default CharacterInfo;
+export default PlanetsInfo;

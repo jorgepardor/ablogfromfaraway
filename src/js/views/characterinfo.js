@@ -26,7 +26,8 @@ const CharacterInfo = () => {
                 params.theid +
                 ".jpg"
               }
-              className="card-img-top img-fluid rounded-2 my-5" style={{height:"70%", width:"70%"}}
+              className="card-img-top img-fluid rounded-2 my-5"
+              style={{ height: "60%", width: "60%" }}
               alt="..."
             />
             <p className="card-text display-5 text-light mt-2">
@@ -37,7 +38,8 @@ const CharacterInfo = () => {
               Height:{" "}
               <span className="text-info">
                 {" "}
-                {infoCharacter.height}{" cms."}
+                {infoCharacter.height}
+                {" cms."}
               </span>{" "}
             </p>
             <p className="card-text lead descrHead text-light">
@@ -45,15 +47,13 @@ const CharacterInfo = () => {
               Weight:{" "}
               <span className="text-info">
                 {" "}
-                {infoCharacter.mass}{" kg."}
+                {infoCharacter.mass}
+                {" kg."}
               </span>
             </p>
             <p className="card-text lead descrHead text-light">
               Hair color:{" "}
-              <span className="text-info">
-                {" "}
-                {infoCharacter.hair_color}
-              </span>
+              <span className="text-info"> {infoCharacter.hair_color}</span>
             </p>
             <p className="card-text lead descrHead text-light">
               Skin color:
@@ -64,10 +64,7 @@ const CharacterInfo = () => {
             </p>
             <p className="card-text lead descrHead text-light">
               Eye color:
-              <span className="text-info">
-                {" "}
-                {infoCharacter.eye_color}
-              </span>
+              <span className="text-info"> {infoCharacter.eye_color}</span>
             </p>
             <p className="card-text lead descrHead text-light">
               Birth year:
@@ -78,11 +75,12 @@ const CharacterInfo = () => {
             </p>
             <p className="card-text lead descrHead text-light mb-4">
               Gender:
-              <span className="text-info">
-                {" "}
-                {infoCharacter.gender}
-              </span>{" "}
+              <span className="text-info"> {infoCharacter.gender}</span>{" "}
             </p>
+
+            <button type="button" class="btn btn-info mt-3">
+              Back
+            </button>
           </div>
         </div>
       </div>

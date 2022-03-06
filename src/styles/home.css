@@ -13,3 +13,8 @@ body {
 .descContent {
     color: #737373 !important;
 };
+
+.dropdown-menu {
+    width: 500px !important;
+    /* height: 400px !important; */
+} 
