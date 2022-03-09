@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Context } from "../store/appContext";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import "../../styles/home.css";
 
 const CharacterInfo = () => {
@@ -78,9 +78,11 @@ const CharacterInfo = () => {
               <span className="text-info"> {infoCharacter.gender}</span>{" "}
             </p>
 
-            <button type="button" class="btn btn-info mt-3">
-              Back
-            </button>
+            <Link to="/">
+              <button type="button" className="btn btn-info mt-3">
+                Back
+              </button>
+            </Link>
           </div>
         </div>
       </div>

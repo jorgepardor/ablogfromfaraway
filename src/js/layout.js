@@ -1,9 +1,10 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import CharacterInfo from "./views/characterinfo.js";
+import PlanetsInfo from "./views/planetsinfo";
+import StarshipInfo	from "./views/starshipsinfo"	
 import injectContext from "./store/appContext";
 import background from "../img/background.png"
 import { Navbar } from "./component/navbar";
@@ -19,7 +20,6 @@ const Layout = () => {
 
 		<div style={{backgroundImage:`url(${background})`, backgroundPosition: 'center', backgroundAttachment: 'fixed', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', height:"vh100"}}>
 			<BrowserRouter basename={basename}>
-				<ScrollToTop>
 					<Navbar />
 					<Switch>
 						<Route exact path="/">
@@ -32,17 +32,16 @@ const Layout = () => {
 							<CharacterInfo />
 						</Route>
 						<Route exact path="/planet/:theid">
-							<CharacterInfo />
+							<PlanetsInfo />
 						</Route>
 						<Route exact path="/starship/:theid">
-							<CharacterInfo />
+							<StarshipInfo />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>
 						</Route>
 					</Switch>
 					<Footer />
-				</ScrollToTop>
 			</BrowserRouter>
 		</div>
 	);

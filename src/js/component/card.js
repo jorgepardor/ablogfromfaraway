@@ -2,13 +2,16 @@ import React, { useEffect, useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
+import  placeholder from "../../img/placeholder.jpg";
 
 export const Card = ({character}) => {
     const { store, actions} = useContext(Context);
     const [info, setInfo] = useState({});
     const [description, setDescription] = useState('');
+    const [url, setUrl] = useState('');
 
     useEffect(() => {
+        fetch (`https://starwars-visualguide.com/assets/img/characters/${character.uid}.jpg`).then((image)=> {image.status == 200 ? setUrl(image.url) : setUrl(placeholder)})
         getInfo();
     }, [])
 
@@ -20,7 +23,7 @@ export const Card = ({character}) => {
     return (
 
         <div className="card mb-5 p-3 border-0 bg-dark">
-            <img src={"https://starwars-visualguide.com/assets/img/characters/"+character.uid+".jpg"} className="card-img-top" alt="..." />
+            <img src={url} className="card-img-top" alt="..." />
             <div className="card-body text-center">
                 <h5 className="card-title text-light">{character.name}</h5>
                 <Link to={`/character/${character.uid}`}>
