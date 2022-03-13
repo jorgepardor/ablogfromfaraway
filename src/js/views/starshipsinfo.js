@@ -2,35 +2,34 @@ import React, { useEffect, useState, useContext } from "react";
 import { Context } from "../store/appContext";
 import { useParams, Link } from "react-router-dom";
 import "../../styles/home.css";
+import placeholder from "../../img/placeholder.jpg";
 
 const StarshipInfo = () => {
   const { store, actions } = useContext(Context);
   const [infoStarship, setInfoStarship] = useState({});
   const params = useParams();
-
-  // console.log();
+  const [url, setUrl] = useState("");
 
   useEffect(async () => {
     const data = await actions.getinfoStarship(params.theid);
     setInfoStarship(data);
   }, []);
 
+  useEffect(() => {
+    fetch(
+      `https://starwars-visualguide.com/assets/img/starships/${params.theid}.jpg`
+    ).then((image) => {
+      image.status == 200 ? setUrl(image.url) : setUrl(placeholder);
+    });
+  }, []);
+
   return (
     <div className="container">
       <div className="row d-flex justify-content-center">
-        <div className="col-6">
+        <div className="card bg-dark col col-lg-6 col-md-10 col-sm-10">
           <div className="card-body text-center bg-dark rounded-2">
-            <img
-              src={
-                "https://starwars-visualguide.com/assets/img/planets/" +
-                params.theid +
-                ".jpg"
-              }
-              className="card-img-top img-fluid rounded-2 my-5"
-              style={{ height: "60%", width: "60%" }}
-              alt="..."
-            />
-            <p className="card-text display-5 text-light mt-2">
+            <img src={url} className="card-img-top mt-2" alt="..." />
+            <p className="card-text display-5 text-light mt-4">
               {infoStarship.name}
             </p>
             <p className="card-text lead descrHead mt-3 text-light">
@@ -47,39 +46,22 @@ const StarshipInfo = () => {
               </span>{" "}
             </p>
             <p className="card-text lead descrHead text-light">
-              Model:{" "}
-              <span className="text-info">
-                {" "}
-                {infoStarship.model}
-              </span>
+              Model: <span className="text-info"> {infoStarship.model}</span>
             </p>
             <p className="card-text lead descrHead text-light">
               Manufacturer:{" "}
-              <span className="text-info">
-                {" "}
-                {infoStarship.manufacturer}
-              </span>{" "}
+              <span className="text-info"> {infoStarship.manufacturer}</span>{" "}
             </p>
             <p className="card-text lead descrHead text-light">
               Class:{" "}
-              <span className="text-info">
-                {" "}
-                {infoStarship.starship_class}
-              </span>
+              <span className="text-info"> {infoStarship.starship_class}</span>
             </p>
             <p className="card-text lead descrHead text-light">
-              Length:{" "}
-              <span className="text-info">
-                {" "}
-                {infoStarship.length}
-              </span>
+              Length: <span className="text-info"> {infoStarship.length}</span>
             </p>
             <p className="card-text lead descrHead text-light">
               Crew:
-              <span className="text-info">
-                {" "}
-                {infoStarship.crew}
-              </span>{" "}
+              <span className="text-info"> {infoStarship.crew}</span>{" "}
             </p>
             <p className="card-text lead descrHead text-light">
               Capacity:
@@ -97,10 +79,7 @@ const StarshipInfo = () => {
             </p>
             <p className="card-text lead descrHead text-light">
               Passengers:
-              <span className="text-info">
-                {" "}
-                {infoStarship.passengers}
-              </span>{" "}
+              <span className="text-info"> {infoStarship.passengers}</span>{" "}
             </p>
             <p className="card-text lead descrHead text-light">
               Hyperdrive rating:{" "}

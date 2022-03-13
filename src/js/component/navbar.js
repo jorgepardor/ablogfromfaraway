@@ -9,7 +9,7 @@ export const Navbar = () => {
   return (
     <nav className="navbar navbar-dark mb-3">
       <div className="container">
-        <a class="navbar-brand" href="/">
+        <a className="navbar-brand" href="/">
           <img src={logo} className="px-5 my-3" style={{ height: "64px" }} />
         </a>
 
@@ -29,7 +29,7 @@ export const Navbar = () => {
           >
             {store.favourites.map((favourite, index) => {
               return (
-                <li key={favourite.id}>
+                <li className="my-2" key={favourite.id}>
                   {favourite.name}{" "}
                   <button
                     className="btn btn-warning"
