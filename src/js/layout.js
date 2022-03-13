@@ -34,7 +34,7 @@ const Layout = () => {
 						<Route exact path="/planet/:theid">
 							<PlanetsInfo />
 						</Route>
-						<Route exact path="/starship/:theid">
+						<Route exact path="/starships/:theid">
 							<StarshipInfo />
 						</Route>
 						<Route>

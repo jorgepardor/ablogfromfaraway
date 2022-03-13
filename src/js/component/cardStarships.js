@@ -1,7 +1,7 @@
 import React, { useEffect, useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import PropTypes from 'prop-types';
-import { Link } from "react-router-dom";
+import { Link,useParams } from "react-router-dom";
 import  placeholder from "../../img/placeholder.jpg";
 
 export const CardStarships = ({starship}) => {

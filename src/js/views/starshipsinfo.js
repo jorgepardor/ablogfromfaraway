@@ -11,7 +11,7 @@ const StarshipInfo = () => {
   const [url, setUrl] = useState("");
 
   useEffect(async () => {
-    const data = await actions.getinfoStarship(params.theid);
+    const data = await actions.getInfoStarship(params.theid);
     setInfoStarship(data);
   }, []);
 
