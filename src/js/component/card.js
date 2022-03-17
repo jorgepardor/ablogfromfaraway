@@ -6,19 +6,13 @@ import  placeholder from "../../img/placeholder.jpg";
 
 export const Card = ({character}) => {
     const { store, actions} = useContext(Context);
-    const [info, setInfo] = useState({});
-    const [description, setDescription] = useState('');
     const [url, setUrl] = useState('');
 
     useEffect(() => {
         fetch (`https://starwars-visualguide.com/assets/img/characters/${character.uid}.jpg`).then((image)=> {image.status == 200 ? setUrl(image.url) : setUrl(placeholder)})
-        getInfo();
-    }, [])
 
-    const getInfo = async () => {
-        let data = await actions.getInfoCharacter(character.uid);
-        setInfo(data);
-    }
+    }, [store.chars])
+
 
     return (
 

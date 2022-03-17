@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Home } from "./views/home";
-import { Demo } from "./views/demo";
 import CharacterInfo from "./views/characterinfo.js";
 import PlanetsInfo from "./views/planetsinfo";
 import StarshipInfo	from "./views/starshipsinfo"	
@@ -24,9 +23,6 @@ const Layout = () => {
 					<Switch>
 						<Route exact path="/">
 							<Home />
-						</Route>
-						<Route exact path="/demo">
-							<Demo />
 						</Route>
 						<Route exact path="/character/:theid">
 							<CharacterInfo />

@@ -9,13 +9,6 @@ import "../../styles/home.css";
 export const Home = () => {
 	const {store, actions} = useContext(Context);
 	
-	useEffect(() => {
-		actions.getCharacters();
-		actions.getPlanets();
-		actions.getStarships();
-	}, [])
-
-	
 	return (
 		<div className="container">
 			<p className="display-3 text-info text-center mb-4">Characters</p> 

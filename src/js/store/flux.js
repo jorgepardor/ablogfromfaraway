@@ -11,44 +11,25 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 
 		actions: {
-			getCharacters: () => {
-				if (getStore().charUrl == "") {
-					fetch('https://www.swapi.tech/api/people?page=1')
+			getCharacters: (url) => {
+				url = url == undefined ? getStore().charUrl : url
+					fetch(url)
 					.then((response) => response.json())
 					.then((data) => setStore({chars: data.results, charUrl: data.next}));
-				}
-				else if (getStore().charUrl != "") {
-					fetch(getStore().charUrl)
-					.then((response) => response.json())
-					.then((data) => setStore({chars: data.results, charUrl: data.next}));
-				}
 			},
 
-			getPlanets: () => {
-					if (getStore().planUrl == "") {
-					fetch('https://www.swapi.tech/api/planets?page=1')
-					.then((response) => response.json())
-					.then((data) => setStore({planets: data.results, planUrl: data.next}));
-				}
-					else if (getStore().planUrl != "") {
-					fetch(getStore().planUrl)
-					.then((response) => response.json())
-					.then((data) => setStore({planets: data.results, planUrl: data.next}));
-				}
+			getPlanets: (url) => {
+				url = url == undefined ? getStore().planUrl : url
+				fetch(url)
+				.then((response) => response.json())
+				.then((data) => setStore({planets: data.results, planUrl: data.next}));
 			},
 
-			getStarships: () => {
-				if (getStore().shipUrl == "") {
-				fetch('https://www.swapi.tech/api/starships?page=1')
+			getStarships: (url) => {
+				url = url == undefined ? getStore().shipUrl : url
+				fetch(url)
 				.then((response) => response.json())
 				.then((data) => setStore({starships: data.results, shipUrl: data.next}));
-				}
-				else if (getStore().shipUrl != "") {
-					fetch(getStore().shipUrl)
-					.then((response) => response.json())
-					.then((data) => setStore({starships: data.results, shipUrl: data.next}));
-				}
-
 			},
 
 			getInfoCharacter: async (id) => {
@@ -70,10 +51,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			setFavourites: (fav) => {
-				setStore({favourites: [...getStore().favourites, fav]}) 
+				if (!getStore().favourites.map((x) => {return x.name}).includes(fav.name)) {
+					setStore({favourites: [...getStore().favourites, fav]})}
+				 
 			},
 
 			deleteFavourites: (index) => {
+				
 				setStore({favourites: [...getStore().favourites.filter((fav, i) => index != i)]})
 				
 			},
